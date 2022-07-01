@@ -1,0 +1,16 @@
+Registration:
+  name: ${self:provider.stage}-registration-service
+  Description: registration service ${self:provider.stage}
+  handler: src/handler/aws/registration-handler.registrationHandler
+  disableLogs: true
+  timeout: 30
+  memorySize: 512
+  package:
+    include:
+      - src/handler/aws/registration-handler.js
+      - node_modules/registration/**
+  events:
+    - httpApi:
+        path: register
+        method: post
+        async: false

@@ -1,0 +1,1 @@
+module.exports.apiProcessor = require('./src/api/RegistrationApiProcessor');

@@ -1,0 +1,16 @@
+{
+  "name": "serverless",
+  "version": "1.0.0",
+  "description": "serverless data api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arbaz Khan",
+  "license": "ISC",
+  "dependencies": {
+    "registration-service": "file:../api-operations/registration-service",
+    "serverless": "^3.19.0",
+    "serverless-offline": "^8.8.0"
+  }
+}

@@ -1,0 +1,29 @@
+Resources:
+  registrationIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      path: /my/default/path/
+      RoleName: ${opt:stage, self:provider.stage}-${self:service}-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        statements:
+          - Effect: "Allow"
+            Action:
+              - "s3:ListBucket"
+            Resource:
+              {
+                "Fn::Join":
+                  [
+                    "",
+                    ["arn:aws:s3:::", { "Ref": "ServerlessDeploymentBucket" }],
+                  ],
+              }
+          - Effect: "Allow"
+            Action:
+              - "s3:PutObject"
+            Resource:
+              Fn::Join:
+                - ""
+                - - "arn:aws:s3:::"
+                  - "Ref": "ServerlessDeploymentBucket"
+                  - "/*"

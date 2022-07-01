@@ -1,0 +1,6 @@
+Resources:
+  RegistrationLogGroup:
+   Type: AWS::Logs::LogGroup
+   Properties:
+    LogGroupName: /aws/lambda/${self:provider.stage}-registration-service
+    RetentionInDays: 7
