@@ -11,7 +11,7 @@ class RegistrationApiProcessor {
             try {
                 console.log(`event received:: ${JSON.stringify(event)}`);
 
-                let requestDto = await new RequestDto(event.body);
+                let requestDto = new RequestDto(event.header, event.body);
                 console.log(`requestDto ${JSON.stringify(requestDto)}}`);
 
                 let requestBo = await dtoBoTransformer.transformToBo(requestDto);
