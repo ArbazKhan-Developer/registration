@@ -1,7 +1,9 @@
 class requestBo {
     constructor(header, body, address){
+        this.email = body.Email
         this.firstName = body.FirstName
         this.lastName = body.LastName
+        this.DOB = body.DOB
         this.contact = body.Phone
         this.village = address.Village
         this.post = address.Post
@@ -14,7 +16,8 @@ class requestBo {
 
     toJson(){
         return {
-            timeStamp: new Date().toISOString(),
+            email: this.email,
+            "date-of-birth": this.DOB,
             firstName: this.firstName,
             lastName: this.lastName,
             contact: this.contact,
@@ -24,7 +27,8 @@ class requestBo {
             pinCode: this.pinCode,
             qualification: this.qualification,
             skills: this.skills,
-            profession: this.profession
+            profession: this.profession,
+            timeStamp: new Date().toISOString()
         }
     }
 }
