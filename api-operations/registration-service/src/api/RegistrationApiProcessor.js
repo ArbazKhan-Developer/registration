@@ -19,7 +19,8 @@ class RegistrationApiProcessor {
 
                 let dbResponse = await stageservice.processToDestination(requestBo.toJson())
 
-                resolve(dbResponse)
+                resolve(dbResponse);
+                
             } catch (error) {
                 console.log(`error occoured in apiLayer:: ${error}`);
                 reject('error in api layer');
