@@ -12,9 +12,9 @@ provider:
   region: us-east-1
   environment:
     TABLE_NAME: registration-data
-  apiGateway:
-    restApiId: 0pzfc1u4c7
-    restApiRootResourceId: obos7gqihd
+  # apiGateway:
+  #   restApiId: 0pzfc1u4c7
+  #   restApiRootResourceId: obos7gqihd
   iam:
     role: arn:aws:iam::812443762654:role/registration-role
   
