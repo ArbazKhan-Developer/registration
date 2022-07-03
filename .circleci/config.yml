@@ -10,9 +10,11 @@ jobs:
        - aws-cli/setup
        - serverless/setup
        - run: 
-          command: cd serverless
-       - run: 
-          command: sls deploy
+          command: |
+            cd common/serverless
+            sls deploy
+
+      
 workflows:
   build_and_deploy:
     jobs:
