@@ -12,7 +12,7 @@ jobs:
        - run: 
           command: |
             cd serverless
-            sls deploy --stage dev
+            sls deploy
 
       
 workflows:
