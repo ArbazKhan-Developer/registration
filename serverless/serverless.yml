@@ -6,6 +6,7 @@ plugins:
 
 provider:
   name: aws
+  profile: Khan-Arbaz
   runtime: nodejs14.x
   memorySize: 512
   stage: ${opt:stage}
