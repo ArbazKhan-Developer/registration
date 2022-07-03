@@ -11,7 +11,7 @@ jobs:
        - serverless/setup
        - run: 
           command: |
-            cd common/serverless
+            cd serverless
             sls deploy
 
       
