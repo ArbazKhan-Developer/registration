@@ -13,10 +13,10 @@ provider:
   environment:
     TABLE_NAME: registration-data
   apiGateway:
-    restApiId: 123je
-    restApiRootResourceId: 123er
-  # iam:
-  #   role: ${file(./configs/resources/iam-role.yml)}
+    restApiId: 0pzfc1u4c7
+    restApiRootResourceId: obos7gqihd
+  iam:
+    role: ${file(./configs/resources/iam-role.yml)}
 
 functions: ${file(./configs/functions/registration-function.yml)}
 
