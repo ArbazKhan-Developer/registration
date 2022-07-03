@@ -1,28 +1,73 @@
-
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+   aws-cli: circleci/aws-cli@1.0
+   serverless: circleci/serverless-framework@1.0
 jobs:
-  build-and-deploy:
-    docker:
-      - image: circleci/node:10.16.3
-    steps:
-      - checkout
-      - run: 
-          command: sudo npm i -g serverless npm@latest
-      - run: 
-          command: npm install
-      - run: 
-          command: ./.circleci/install-credentials.sh
-      - run: 
-          command: sls deploy
+   one:
+     executor: serverless/default
+     steps:
+       - checkout
+       - aws-cli/setup
+       - serverless/setup
+       - run: sls deploy 
 workflows:
-  build-and-test:
+  one_and_two:
     jobs:
-      - build-and-deploy:
-          context: serverlessProject
-          filter:
-            branches:
-              only:
-                - feature/dit
-                - master
+      - one
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# version: 2.1
+# orbs:
+#   node: circleci/node@1.1.6
+# jobs:
+#   build-and-deploy:
+#     docker:
+#       - image: circleci/node:10.16.3
+#     steps:
+#       - checkout
+#       - run:
+#           command: sudo npm i -g serverless npm@latest
+#       - run:
+#           command: npm install
+#       - run:
+#           name: Deploy application
+#           command: |
+#             chmod +x scripts/aws-cli-assumerole.sh
+#             source scripts/aws-cli-assumerole.sh
+#             sls deploy --stage prod
+#       - run:
+#           command: ./.circleci/install-credentials.sh
+#       - run:
+#           command: sls deploy
+
+# workflows:
+#   build-and-deploy:
+#     jobs:
+#       - build-and-deploy:
+#           context: serverlessProject
+#           filter:
+#             branches:
+#               only:
+#                 - feature/dit
+#                 - master
