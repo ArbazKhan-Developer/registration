@@ -10,7 +10,7 @@ Registration:
       - src/handler/aws/registration-handler.js
       - node_modules/registration/**
   events:
-    - httpApi:
+    - http:
         path: register
         method: post
         async: false

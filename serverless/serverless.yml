@@ -13,8 +13,8 @@ provider:
   environment:
     TABLE_NAME: registration-data
   # apiGateway:
-  #   restApiId: 0pzfc1u4c7
-  #   restApiRootResourceId: obos7gqihd
+    restApiId: d512ha3293
+    restApiRootResourceId: 0m713blu0i
   iam:
     role: arn:aws:iam::812443762654:role/registration-role
   
