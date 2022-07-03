@@ -16,7 +16,10 @@ provider:
     restApiId: 0pzfc1u4c7
     restApiRootResourceId: obos7gqihd
   iam:
-    role: ${file(./configs/resources/iam-role.yml)}
+    role: arn:aws:iam::123456789012:role/execution-role
+  
+  # iam:
+  #   role: ${file(./configs/resources/iam-role.yml)}
 
 functions: ${file(./configs/functions/registration-function.yml)}
 
