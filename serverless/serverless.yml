@@ -17,7 +17,7 @@ provider:
     restApiId: d512ha3293
     restApiRootResourceId: 0m713blu0i
   iam:
-    role: arn:aws:iam::812443762654:role/registration-role
+    role: arn:aws:iam::812443762654:role/registration-lambda
   
   # iam:
   #   role: ${file(./configs/resources/iam-role.yml)}
