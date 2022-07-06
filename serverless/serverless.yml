@@ -12,7 +12,7 @@ provider:
   region: us-east-1
   environment:
     TABLE_NAME: registration-data
-  deployementBucket: deployement-bucket-${provider.stage}
+  deployementBucket: deployement-bucket-dev
   apiGateway:
     restApiId: d512ha3293
     restApiRootResourceId: 0m713blu0i
