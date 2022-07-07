@@ -4,7 +4,7 @@ const apiProcessor = require("../../../api-operations/registration-service/src/a
 
 module.exports.registrationHandler = async (event, context, callback) => {
   try {
-   return await new apiProcessor().process(event, context)
+   await new apiProcessor().process(event, context)
     .then(result =>{
       console.log(result);
       callback(null, {
@@ -16,8 +16,11 @@ module.exports.registrationHandler = async (event, context, callback) => {
           "Access-Control-Allow-Credentials": false,
           "Access-Control-Allow-Origin": "*",
           "X-Requested-With": "*"
-        }
+        },
+        body: JSON.stringify(result)
       })
+    }).catch(err =>{
+      console.log(err);
     })
   } catch (error) {
     console.log(error);

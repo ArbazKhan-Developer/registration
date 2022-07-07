@@ -13,8 +13,10 @@ class dynamoDao{
                 Item: data, 
             }
 
-         let response =  await docClient.put(params).promise()
-        return response
+         await docClient.put(params).promise()
+        return {
+            Message: "inserted successfully"
+        }
         } catch (error) {
             console.log(error);
         }
