@@ -14,3 +14,11 @@ Registration:
         path: register
         method: post
         async: false
+        cors:
+          origin: "*"
+          headers:
+            - Content-Type
+            - Access-Control-Allow-Headers
+            - Access-Control-Request-Headers
+            - Access-Control-Request-Method
+            - Access-Control-Allow-Origin
