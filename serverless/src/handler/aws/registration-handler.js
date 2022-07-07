@@ -1,6 +1,6 @@
 'use strict';
 
-const apiProcessor = require('registration-service').apiProcessor
+const apiProcessor = require("../../../api-operations/registration-service/src/api/RegistrationApiProcessor")
 
 module.exports.registrationHandler = async (event, context, callback) => {
   try {

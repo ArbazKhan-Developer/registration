@@ -6,19 +6,15 @@ const tableName = process.env.TABLE_NAME || "registration-data"
 
 class dynamoDao{
     async saveRecords(data){
+        console.log(data);
         try {
             let params = {
                 TableName: tableName,
                 Item: data, 
             }
 
-            docClient.put(params, (err, data)=> {
-                if (err) {
-                  console.log("Error", err);
-                }
-
-                return data
-              });
+         let response =  await docClient.put(params).promise()
+        return response
         } catch (error) {
             console.log(error);
         }
